@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FIREWORK DESIGN | Portfólio</title>
+  <meta name="description" content="Conheça os projetos demonstrativos da FIREWORK DESIGN. Sites modernos, responsivos e personalizados para empresas.">
+  <meta name="theme-color" content="#050505">
+
+  <style>
+    :root {
+      --bg: #050505;
+      --card: #0d0d0d;
+      --card-hover: #121212;
+      --text: #ffffff;
+      --muted: #a7a7a7;
+      --pink: #ff176f;
+      --green: #20e58a;
+      --blue: #00c8ff;
+      --border: rgba(255,255,255,.10);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 50% -10%, rgba(255,23,111,.10), transparent 32%),
+        var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    header {
+      padding: 26px 0;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(5,5,5,.90);
+      backdrop-filter: blur(12px);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo-bars {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .logo-bars span {
+      width: 5px;
+      height: 22px;
+      border-radius: 3px;
+      display: block;
+    }
+
+    .logo-bars span:nth-child(1) { background: var(--pink); }
+    .logo-bars span:nth-child(2) { background: var(--green); }
+    .logo-bars span:nth-child(3) { background: var(--blue); }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #d5d5d5;
+      font-size: 14px;
+      transition: .2s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 90px 0 80px;
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 7px 14px;
+      border: 1px solid rgba(255,23,111,.45);
+      border-radius: 999px;
+      color: var(--pink);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 10vw, 100px);
+      line-height: .95;
+      font-weight: 950;
+      letter-spacing: -4px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--pink), var(--green), var(--blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero h2 {
+      font-size: clamp(20px, 3vw, 32px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* PROJECTS */
+    .projects {
+      padding: 75px 0 100px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-title .mini {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, #101010, #090909);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      transition: transform .25s, border-color .25s, background .25s;
+    }
+
+    .project-card {
+      min-width: 0;
+    }
+
+    /* Card 03 centralizado na linha de baixo, com a mesma largura dos outros */
+    .project-third {
+      grid-column: 1 / -1;
+      width: calc((100% - 25px) / 2);
+      justify-self: center;
+    }
+
+    @media (hover: hover) {
+      .project-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(255,255,255,.22);
+        background: var(--card-hover);
+      }
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: .12;
+      pointer-events: none;
+      top: -80px;
+      right: -50px;
+    }
+
+    .project-card.tourism::before {
+      background: var(--blue);
+    }
+
+    .project-card.gym::before {
+      background: var(--green);
+    }
+
+    .project-card.law::before {
+      background: var(--pink);
+    }
+
+    .project-number {
+      color: #777;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 28px;
+    }
+
+    .project-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      font-size: 27px;
+      margin-bottom: 22px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--border);
+    }
+
+    .project-card.tourism .project-icon {
+      box-shadow: inset 0 0 30px rgba(0,200,255,.08);
+    }
+
+    .project-card.gym .project-icon {
+      box-shadow: inset 0 0 30px rgba(32,229,138,.08);
+    }
+
+    .project-card h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 25px;
+      min-height: 52px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 27px;
+    }
+
+    .tag {
+      padding: 5px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: #cfcfcf;
+      font-size: 11px;
+    }
+
+    .project-button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 14px;
+      background: #fff;
+      color: #050505;
+      transition: .2s;
+    }
+
+    .project-button:hover {
+      transform: scale(1.015);
+    }
+
+    /* ABOUT */
+    .about {
+      padding: 85px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-box {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-box h2 {
+      font-size: clamp(30px, 5vw, 44px);
+      margin-bottom: 18px;
+    }
+
+    .about-box p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* CTA */
+    .contact {
+      padding: 90px 0;
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 50px 30px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,23,111,.10), transparent 35%),
+        radial-gradient(circle at 85% 80%, rgba(0,200,255,.08), transparent 35%),
+        #0b0b0b;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(30px, 5vw, 45px);
+      margin-bottom: 13px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .whatsapp-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 15px 25px;
+      border-radius: 12px;
+      background: var(--green);
+      color: #03170e;
+      font-weight: 900;
+      transition: .2s;
+    }
+
+    .whatsapp-button:hover {
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+      color: #777;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .footer-brand {
+      color: #aaa;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    /* RESPONSIVE */
+
+    /* Telas muito grandes */
+    @media (min-width: 1600px) {
+      .container { width: min(1240px, calc(100% - 80px)); }
+    }
+
+    /* Tablets e notebooks pequenos */
+    @media (max-width: 1024px) {
+      .project-card { padding: 26px; }
+      .project-card h3 { font-size: 24px; }
+      .hero { min-height: 520px; padding: 80px 0 70px; }
+    }
+
+    /* Tablets em pé e celulares grandes: 1 coluna, card 03 centralizado */
+    @media (max-width: 760px) {
+      .container { width: calc(100% - 28px); }
+
+      header { padding: 14px 0; }
+
+      .header-content {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 22px;
+      }
+
+      nav a { font-size: 13px; }
+
+      .hero { min-height: auto; padding: 70px 0 60px; }
+      .hero h1 { letter-spacing: -2px; }
+      .hero p { font-size: 15px; }
+
+      .projects { padding: 55px 0 70px; }
+      .section-title { margin-bottom: 36px; }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .project-third {
+        width: 100%;
+        max-width: 100%;
+        justify-self: stretch;
+      }
+
+      .project-card { padding: 24px; }
+      .project-card p { min-height: 0; }
+
+      .about, .contact { padding: 65px 0; }
+      .contact-box { padding: 40px 22px; }
+    }
+
+    /* Celulares pequenos */
+    @media (max-width: 480px) {
+      .logo { font-size: 18px; gap: 8px; }
+      .logo-bars span { height: 18px; }
+
+      .hero h1 { font-size: clamp(38px, 13vw, 52px); letter-spacing: -1.5px; }
+      .hero h2 { font-size: 19px; }
+      .eyebrow { font-size: 11px; letter-spacing: 1px; }
+
+      .project-card { padding: 20px; border-radius: 16px; }
+      .project-card h3 { font-size: 22px; }
+      .project-number { margin-bottom: 20px; }
+
+      .whatsapp-button, .project-button { width: 100%; }
+      .contact-box { border-radius: 18px; }
+    }
+
+    /* Telas muito estreitas (ex.: 320px) */
+    @media (max-width: 340px) {
+      .logo { font-size: 16px; }
+      nav { gap: 16px; }
+    }
+
+    /* Respeita quem prefere menos animação */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-content">
+      <a href="#" class="logo" aria-label="FIREWORK DESIGN">
+        FIREWORK
+        <span class="logo-bars" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span>DESIGN</span>
+      </a>
+
+      <nav>
+        <a href="#projetos">Projetos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="eyebrow">Portfólio FIREWORK DESIGN</div>
+
+        <h1>
+          FIREWORK<br>
+          <span>DESIGN</span>
+        </h1>
+
+        <h2>Design que coloca sua empresa na internet.</h2>
+
+        <p>
+          Conheça alguns dos nossos projetos demonstrativos e veja como
+          podemos transformar a presença digital de uma empresa.
+        </p>
+      </div>
+    </section>
+
+    <section class="projects" id="projetos">
+      <div class="container">
+
+        <div class="section-title">
+          <div class="mini">Projetos demonstrativos</div>
+          <h2>Conheça nossos projetos</h2>
+          <p>
+            Explore os exemplos abaixo para conhecer diferentes possibilidades
+            de estrutura, design e apresentação.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- PROJETO 1 -->
+          <article class="project-card tourism">
+            <div class="project-number">01 / PROJETO</div>
+
+            <div class="project-icon" aria-hidden="true">✈️</div>
+
+            <h3>Agência de Turismo</h3>
+
+            <p>
+              Exemplo de site para uma agência de turismo, com apresentação
+              de serviços e foco em uma experiência visual moderna.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Turismo</span>
+              <span class="tag">Responsivo</span>
+              <span class="tag">Design moderno</span>
+            </div>
+
+            <a
+              class="project-button"
+              href="https://turismo-demonstracao.netlify.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver projeto
+              <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <!-- PROJETO 2 -->
+          <article class="project-card gym">
+            <div class="project-number">02 / PROJETO</div>
+
+            <div class="project-icon" aria-hidden="true">🏋️</div>
+
+            <h3>Academia</h3>
+
+            <p>
+              Exemplo de site para uma academia, pensado para apresentar
+              o espaço, serviços e informações de forma profissional.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Fitness</span>
+              <span class="tag">Responsivo</span>
+              <span class="tag">Design moderno</span>
+            </div>
+
+            <a
+              class="project-button"
+              href="https://academia-demonstracao.netlify.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver projeto
+              <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <!-- PROJETO 3 -->
+          <article class="project-card project-third law">
+            <div class="project-number">03 / PROJETO</div>
+            <div class="project-icon" aria-hidden="true">⚖️</div>
+            <h3>Escritório de Advocacia</h3>
+            <p>
+              Exemplo de site para um escritório de advocacia, com apresentação
+              profissional, elegante e foco em credibilidade.
+            </p>
+            <div class="tags">
+              <span class="tag">Advocacia</span>
+              <span class="tag">Responsivo</span>
+              <span class="tag">Design moderno</span>
+            </div>
+            <a
+              class="project-button"
+              href="https://marcelbrito021.github.io/escrit-rio_demonstra-o/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver projeto
+              <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="container about-box">
+        <div class="section-title" style="margin-bottom: 20px;">
+          <div class="mini">FIREWORK DESIGN</div>
+          <h2>Seu negócio merece uma presença digital profissional.</h2>
+        </div>
+
+        <p>
+          Criamos sites modernos, responsivos e pensados de acordo com
+          a identidade e as necessidades de cada negócio.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="container">
+        <div class="contact-box">
+          <h2>Quer um site para sua empresa?</h2>
+
+          <p>
+            Entre em contato com a FIREWORK DESIGN e converse sobre
+            o projeto ideal para o seu negócio.
+          </p>
+
+          <!--
+            https://wa.me/5573998239704
+          -->
+          <a
+            class="whatsapp-button"
+            href="https://wa.me/5573998239704"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Falar no WhatsApp
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <span class="footer-brand">FIREWORK DESIGN</span>
+      <br>
+      © 2026 — Portfólio demonstrativo.
+    </div>
+  </footer>
+
+</body>
+</html>
